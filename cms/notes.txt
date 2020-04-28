@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/58841634/show-select-field-based-on-some-other-select-option-in-flask
+
+Above link shows how to preview sub categories based on category selection
+
+Below link is even better:
+https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html
+

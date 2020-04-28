@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product</title>
+</head>
+<body>
+
+    <h1>Here are the Product Details</h1>
+    
+        <div style="margin-top: 2em;">
+            <p>Name: {{prod.name}}</p>
+            <p>Description: {{prod.description}}</p>
+            <p>Category: {{prod.category}}</p>
+            <p>Sub Category: {{prod.sub_category}}</p>
+            {% for image in prod.images_set.all %}
+            <img src="{{image.image.url}}" alt="" width="100" height="100">
+            {% endfor %}
+        </div>
+
+</body>
+</html>
