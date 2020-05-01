@@ -1,13 +1,16 @@
 import django_filters
+from django import forms
 
 from .models import Product
 
 class ProductFilter(django_filters.FilterSet):
-    # name = django_filters.CharFilter(lookup_expr='icontains')
+    name = django_filters.CharFilter(lookup_expr='icontains')
+    description = django_filters.CharFilter(lookup_expr='icontains')
     # color = django_filters.CharFilter(lookup_expr='iexact')
     # model = django_filters.CharFilter(lookup_expr='iexact')
 
     # length__gt = django_filters.NumberFilter(name='length', lookup_expr='length__gt')
+    # length__gt = django_filters.NumberFilter(name='length', lookup_expr='length__gt', widget=forms.NumberInput(attrs={'class': 'form-control', 'step':0.1}))
     # width__gt = django_filters.NumberFilter(name='width', lookup_expr='width__gt')
     # height__gt = django_filters.NumberFilter(name='height', lookup_expr='height__gt')
     # length__lt = django_filters.NumberFilter(name='length', lookup_expr='length__lt')

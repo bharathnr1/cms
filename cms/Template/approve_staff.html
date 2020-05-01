@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Account Approvals</title>
+</head>
+<body>
+    <h3>Kindly approve or reject the following accounts: </h3>
+    <ul>
+        <li style="list-style-type: none;">
+
+            {% for staff in pending_approvals %}
+            <form action="{% url 'catalog:approve_staff' %}" method="post" id="{{staff.user}}" name="{{staff.user}}">
+                {% csrf_token %}
+                <p name='user'>{{staff.user}}</p>
+                <input type="hidden" name="user" value="{{ staff.user_id }}">
+
+                <button type="submit" name='approve' >Approve</button>
+                <button type="submit" name='reject' >Reject</button>
+            </form>
+            
+            {% endfor %}
+
+        </li>
+    </ul>
+</body>
+</html>

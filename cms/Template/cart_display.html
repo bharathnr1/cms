@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <a target="blank" href="{% url 'catalog:generate_pdf_cart' %}"><button>Generate pdf</button></a>
+    <h1 style="text-align: center;">Here is your cart grouped by categories: </h1>
+
+    <!-- <p>{{cart_by_category}}</p> -->
+    <!-- cart_by_category is a dictionary containing [cart category : products] key-value pairs.
+         Iterate this to sort the cart by category -->
+         {% for category, products in cart_by_category.items %}
+         <div style="
+             margin: 2em;
+             margin-left: 32%; 
+             text-align: center;
+             border: 1px solid black;
+             width: 33%;
+         ">
+             <p>Category : {{category}}</p>
+            {% for prod in products %}         
+                <p>{{prod}}</p>
+                {% for image in prod.product.images_set.all %}
+                    <img src="{{image.image.url}}" alt="" width="100" height="100">
+                {% endfor %}
+            {% endfor %}
+             <br><br>
+             </div>
+     {% endfor %}
+</body>
+</html>

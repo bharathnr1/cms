@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All SubCategories</title>
+</head>
+<body>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>SubCategory</th>
+            </tr>
+            {% for sub_category in sub_categories %}
+            <tr>
+                <td>{{sub_category.category}}</td>
+                <td>{{sub_category.sub_category}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    
+</body>
+</html>

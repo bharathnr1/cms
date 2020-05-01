@@ -14,6 +14,9 @@
   <ul>
   {% for prod in product_filter.qs %}
     <li>{{prod.name}}</li>
+    {% for image in prod.images_set.all %}
+    <img src="{{image.image.url}}" alt="" width="100" height="100">
+    {% endfor %}
   {% endfor %}
   </ul>
 

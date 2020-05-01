@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'import_export',
     'django_filters',
+    'accounts.apps.AccountsConfig', #Login
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+#LOGIN REDIRECT
+LOGIN_REDIRECT_URL = '/catalog'
 
 
 # Static files (CSS, JavaScript, Images)

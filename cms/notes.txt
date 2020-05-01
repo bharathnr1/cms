@@ -5,3 +5,6 @@ Above link shows how to preview sub categories based on category selection
 Below link is even better:
 https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html
 
+
+Questions:
+1. What exactly should the staff be allowed to access?
