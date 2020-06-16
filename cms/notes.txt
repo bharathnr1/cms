@@ -5,6 +5,11 @@ Above link shows how to preview sub categories based on category selection
 Below link is even better:
 https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html
 
+Things to be taken care:
+1. Research on the capability of the website to serve incoming requests. 
+  - Django's limitations
+  - SQLLite's limitations
+  - Hostinger's limitations
 
 Questions:
 1. What exactly should the staff be allowed to access?
