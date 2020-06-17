@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" 
+  type="image/png" 
+  href="./hstc_logo.jpeg">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- style font -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>search</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <img class="image-logo" src="./hstc_logo.jpeg" alt="">
+      <a class="navbar-brand" href="#">HSTC</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-info my-2 my-sm-0" type="submit"><i class="fas fa-search fa-1x"></i></button>
+      </form>
+    </div>
+  </nav>
+
+  <div id="background">
+  <!-- <nav id="main">
+    <div class="nav-part">
+      <div class="logo">
+        <div class="image-logo">
+          <img src="./hstc_logo.jpeg" alt="">
+          <h2><a href="#">HSTC</a></h2>
+        </div>
+      </div>
+      
+      <div class="search">
+        <input class="search-p1" type="text" placeholder="Search.."><a href="#"><button>
+        <i class="fas fa-search fa-2x"></i></button></a>
+      </div>
+
+      <div class="logout">
+        <ul>
+          <li>Log Out<i class="fas fa-sort-down"></i>
+            <ul>
+              <li><a href="#">Manage Your Account</a></li>
+              <li><a href="#">Add Another Account </a> <i class="fas fa-user fa-1"></i></li>
+              <li><a href="#">Sign Out</a></li>
+              <li><a href="#">Term & Condition</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+  
+
+
+ <!-- ......................side bar............................  -->
+  <section class="section">
+    <div class="size">
+      <div class="multi-level">
+        <!-- <div class="item">
+          
+          <input type="checkbox" id="A"/>
+          <label for="A">Service</label> 
+
+          <ul>
+            <li><a href="#">Branding</a></li>
+            <li><a href="#">chair</a></li>
+            <li><a href="#">table</a></li>
+
+          </ul>
+        </div> -->
+
+
+        <div class="item">
+          <!-- <input type="checkbox" id="B" />
+          <label for="B">bed</label>    
+          <ul>
+            <li><div class="sub-item">
+              <input type="checkbox" id="B-A"/>
+              <label for="B-A">bed Size</label>
+
+              <ul>
+                <li><a href="#">king Size</a></li>
+                <li><a href="#">quine size</a></li>
+                <li><a href="#">kid size</a></li>
+
+              </ul>
+            </div></li>
+
+            <li><div class="sub-item">
+                <input type="checkbox" id="B-B" />
+                <label for="B-B">Chair Size</label>   
+            
+                <ul>
+                  <li><a href="#">hi back Chair</a></li>
+                  <li><a href="#">normal Chair</a></li>
+                  <li><a href="#">low back chair</a></li>
+            
+                </ul>
+              </div></li>
+              <li><a href="#">Manage Your Account</a></li>
+              <li><a href="#">Add Another Account </a></li>
+              <li><a href="#">Sign Out</a></li>
+              <li><a href="#">Term & Condition</a></li>
+        
+          </ul> -->
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Example select</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">Example multiple select</label>
+              <select multiple class="form-control" id="exampleFormControlSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="button" class="btn btn-outline-info">Info</button>
+          </form>
+          
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+    <div class="box2">
+      <div class="card">
+        <img src="./abstract-architecture-black-and-white-boardwalk-262367.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+          <div class="card-b">    
+          <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+
+      <div class="card">
+        <img src="./andrii-lievientsov-qVeojK5EOS0-unsplash.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+        <div class="card-b">
+          <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+
+      <div class="card">
+        <img src="./love-romantic-bath-candlelight-3188.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+          <div class="card-b">    
+            <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+          </div>
+
+
+
+
+      <div class="card">
+        <img src="./white-and-black-mattress-fronting-the-mountain-775219.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+        <div class="card-b">
+          <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+
+
+
+      <div class="card">
+        <img src="./white-concrete-building-1838640.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+        <div class="card-b">
+          <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+
+
+
+      <div class="card">
+        <img src="./love-romantic-bath-candlelight-3188.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+        <div class="card-b">
+          <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+      <div class="card">
+        <img src="./tony-yakovlenko-lDxxeAJrWpE-unsplash.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+        <div class="card-b">
+          <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+
+      <div class="card">
+        <img src="./face2.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+        <div class="card-b">
+          <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+
+
+    <div class="card">
+      <img src="./palm-trees-at-night-258154.jpg" alt="">
+      <p> &#8377; 5001</p>
+      <p>high back chair withe table </p>
+      <div class="card-b">
+        <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+
+
+
+      <div class="card">
+        <img src="./andrii-lievientsov-qVeojK5EOS0-unsplash.jpg" alt="">
+        <p> &#8377; 5001</p>
+        <p>high back chair withe table </p>
+        <div class="card-b">
+          <button class="add btn btn-info"><a href="#"> Add To Chart</a></button><input class="form-control" step="1" max="" value="1" name="quantity" class="quantity-field"></div>
+      </div>
+
+
+
+    <div class="box3">
+      <footer class="footer">
+        <div class="copyright">
+          <p>copyright &copy; 2020 <span>S-Hybrid Solution</span>All Right Reserved</p>
+        </div>
+
+      </footer>
+    </div>
+
+</div>
+</body>
+</html>
