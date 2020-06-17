@@ -12,10 +12,20 @@
 </head>
 <body>
 <div class="container" style="margin-top: 3em;">
-    <form id="productForm" method="post" data-subcat-url="{% url 'catalog:load_sub_categories' %}" enctype="multipart/form-data">
+    <form id="productForm" method="post" enctype="multipart/form-data" 
+    data-subcat-url="{% url 'catalog:load_sub_categories' %}" 
+    data-dimensions-url="{% url 'catalog:load_dimensions' %}" 
+    data-primary_materials-url="{% url 'catalog:load_primary_materials' %}" >
 
         {% csrf_token %}
         {% bootstrap_form productForm %}
+        <br>
+        
+        <br>
+        <div class="dimensiondiv"></div>
+        
+        <br>
+        <div class="pmdiv"></div>
         <br>
         {{ formset.management_form }}
         {% for form in formset %}
@@ -31,6 +41,7 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script> 
 
 <script>
+
     $("#id_category").change(function () {
       var url = $("#productForm").attr("data-subcat-url");  //get the URL of sub-categories
       var categoryId = $(this).val();  // get the selected category ID from the HTML input
@@ -41,11 +52,44 @@
           'category': categoryId       // add the category id to the GET parameters
         },
         success: function (data) {   // `data` is the return of the `load_sub_categories` view function
+          console.log(data)
           $("#id_sub_category").html(data);  // replace the contents of the subcategories input with the data that came from the server
         }
       });
-
     });
+    
+    $("#id_category").change(function () {
+      var url = $("#productForm").attr("data-dimensions-url");  //get the URL of sub-categories
+      var categoryId = $(this).val();  // get the selected category ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/catalog/ajax/load_sub_categories/)
+        data: {
+          'category': categoryId       // add the category id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_sub_categories` view function
+          console.log(data)
+          $('.dimensiondiv').html(data)  // replace the contents of the dimension div with the data that came from the server
+        }
+      });
+    });
+    
+    $("#id_category").change(function () {
+      var url = $("#productForm").attr("data-primary_materials-url");  //get the URL of sub-categories
+      var categoryId = $(this).val();  // get the selected category ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/catalog/ajax/load_sub_categories/)
+        data: {
+          'category': categoryId       // add the category id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_sub_categories` view function
+          console.log(data)
+          $('.pmdiv').html(data)  // replace the contents of the primary material div with the data that came from the server
+        }
+      });
+    });
+    
 </script>
 
 </body>

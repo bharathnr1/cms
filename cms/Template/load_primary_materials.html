@@ -1,0 +1,9 @@
+{% load bootstrap4 %}
+
+
+{% for form in mformset %}
+    {{ form.m_field_name }}
+    {{ form.m_field_value }}
+    <!-- {% bootstrap_form form %} -->
+{% endfor %}
+

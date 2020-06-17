@@ -1,20 +1,24 @@
 from django import forms
-from .models import Product, Images, Category, SubCategory, Cart
+from .models import Product, Images, Category, SubCategory, Cart, Dimension, PrimaryMaterial, Vendor
 
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = (
                 "name",
-                "description",
+                "vendor_model_no",
+                "model_no",
+                "finish",
                 "color",
                 "weight",
-                "model",
-                "primary_material",
-                "finish",
-                "length",
-                "width",
-                "height",
+                "unit",
+                "packing",
+                "cbm",
+                "min_price",
+                "max_price",
+                "moq",
+                "lead_time",
+                "remarks",
                 "category",
                 "sub_category",
                 )
@@ -53,3 +57,23 @@ class CartForm(forms.ModelForm):
     class Meta:
         model = Cart
         fields = ()
+
+class DimensionForm(forms.ModelForm):
+    d_field_name = forms.CharField(label='dimension')
+    class Meta:
+        model = Dimension
+        fields = ('d_field_name','d_field_value')
+    
+    # category = forms.ModelChoiceField(queryset=Dimension.objects.none())
+    # product = forms.ModelChoiceField(queryset=Product.objects.none())    
+
+class PrimaryMaterialForm(forms.ModelForm):
+    m_field_name = forms.CharField(label='primary_material')
+    class Meta:
+        model = PrimaryMaterial
+        fields = ('m_field_name','m_field_value')
+
+class VendorForm(forms.ModelForm):
+    class Meta:
+        model = Vendor
+        fields = '__all__'

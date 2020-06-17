@@ -13,9 +13,25 @@
             <p>Name: {{prod.name}}</p>
             <p>Description: {{prod.description}}</p>
             <p>Category: {{prod.category}}</p>
-            <p>Sub Category: {{prod.sub_category}}</p>
+            <p>Sub Category:</p>
+            {% for sub_cat in prod.sub_category.all %}
+                <ul>
+                    <li>{{sub_cat}}</li>
+                </ul>    
+            {% endfor %}
+            <p>Dimensions:</p>
+            {% for dfield in dimensions %}
+                {{ dfield.d_field_name }}
+                {{ dfield.d_field_value }}
+            {% endfor %}
+            <p>Primary Material:</p>
+            {% for mfield in pm %}
+                {{ mfield.m_field_name }}
+                {{ mfield.m_field_value }}
+            {% endfor %}
+            <br>
             {% for image in prod.images_set.all %}
-            <img src="{{image.image.url}}" alt="" width="100" height="100">
+                <img src="{{image.image.url}}" alt="" width="100" height="100">
             {% endfor %}
         </div>
 

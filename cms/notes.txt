@@ -8,3 +8,43 @@ https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-depen
 
 Questions:
 1. What exactly should the staff be allowed to access?
+2. How do we work with Vendor data for now?
+    - Add vendor details for every category
+    - Maintain vendor details by adding their core categories/sub-categories. And on each product detail page, 
+      we will be able to see which vendors supply this product.
+3. vendor_model_no field in Product - ???
+4. How exactly should the email system work? process flow
+
+To-do:
+1. CRUD operations on products, categories, sub-categories
+2. Generate pdf category wise from the carts generated - done
+3. Email server setup - done
+
+
+
+MOM - 29/05/2020
+1. Conversion between units - need to give another input field for units for dimensions
+2. Label to image upload - main view, side view, back view, top view. Option to add more if required.
+
+
+
+
+
+
+
+1. Add new Category
+2. Add new sub sub category
+3. Set dimensions and primary material while creating new categories
+4. Add a product
+5. View all products
+6. View product detail
+7. Search system - in progress
+
+
+1. Login system
+ - Super user
+ - Staff
+2. Cart System
+3. PDF generation
+4. Send email
+5. Vendor 

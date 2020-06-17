@@ -10,7 +10,7 @@ from django.dispatch import receiver
 class SignupCustomer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     approved = models.BooleanField(default=False)
-    is_active = False
+    # is_active = False
 
     def __str__(self):
         return str(self.user)

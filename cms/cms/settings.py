@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.contrib.auth.decorators import login_required, user_passes_test
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -120,7 +122,11 @@ USE_L10N = True
 USE_TZ = True
 
 #LOGIN REDIRECT
+# if @user_passes_test(lambda u: u.is_superuser)
 LOGIN_REDIRECT_URL = '/catalog'
+
+# @login_required
+# LOGIN_REDIRECT_URL = '/catalog/product_add'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -134,3 +140,15 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static') ]
 #Media Files
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+#EMAIL SETTINGS
+SENDGRID_API_KEY = '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'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_ADMIN = 'bharath.nr1@gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587 #use 587, 25 or 465
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY

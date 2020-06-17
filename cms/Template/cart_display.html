@@ -1,3 +1,4 @@
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,8 @@
     <title>Cart</title>
 </head>
 <body>
-    <a target="blank" href="{% url 'catalog:generate_pdf_cart' %}"><button>Generate pdf</button></a>
+    <a target="blank" href="{% url 'catalog:generate_pdf_cart' 'allcarts' %}"><button>Generate pdf</button></a>
+    <a href="{% url 'catalog:send_email' %}"><button>Send Email</button></a>
     <h1 style="text-align: center;">Here is your cart grouped by categories: </h1>
 
     <!-- <p>{{cart_by_category}}</p> -->
@@ -21,14 +23,31 @@
              width: 33%;
          ">
              <p>Category : {{category}}</p>
+            
             {% for prod in products %}         
+                
+            <div style="border: 1px solid blue; margin-bottom: 1em;">
                 <p>{{prod}}</p>
+                <!-- <p>{{prod.product.id}}</p> -->
                 {% for image in prod.product.images_set.all %}
                     <img src="{{image.image.url}}" alt="" width="100" height="100">
                 {% endfor %}
+                <br>
+                <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.product.id}}" name="{{prod.product.id}}">
+                    {% csrf_token %}
+                    {% bootstrap_form addtocartForm %}
+                    <input type="hidden" name="product" value="{{ prod.product.id }}">
+                    <br>
+                    <button type="submit" name='removefromcart' id="removefromcart">Remove from Cart</button>
+                    <br><br>
+                </form>
+                <a target="blank" href="{% url 'catalog:generate_pdf_cart' category %}"><button>Generate pdf</button></a>
+                <br><br>
+            </div>
+
             {% endfor %}
              <br><br>
              </div>
-     {% endfor %}
+         {% endfor %}
 </body>
 </html>
