@@ -1,0 +1,151 @@
+.m-block{
+  display: grid;
+}
+
+.container{
+  width: 100%;
+}
+
+.side-container{
+  display: grid;
+  grid-template-columns: 600px ;
+  grid-template-rows: 300px;
+  grid-gap: 10px;
+}
+
+.vendor-list{
+  margin-left: 50px;
+  width: 600px;
+}
+
+@media(max-width: 360px){
+
+  .container{
+    width: 360px;
+    margin-left: 0;
+    margin: 0;
+    /* margin-bottom: 20px; */
+  }
+  .vendor-list{
+    width: 360px;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  .vendor-list h2,
+  .vendor-list p{
+    margin-left: 10px;
+  }
+
+  .side-container{
+    display: grid;
+    grid-template-columns: 350px;
+    margin-left: 0;
+}
+
+.main{
+  margin-left: 0;
+  padding: 0;
+  
+}
+
+
+.navi{
+  width: 350px;
+  
+}
+
+.dot{
+  margin-top: 30px;
+}
+
+.protect button{
+margin-left: 130px;
+margin-top: 0;}
+
+.protect2{
+  height: 250px;
+}
+
+.l{
+  width: 350px;
+}
+.p-b{
+  width: 350px;
+  padding: 0;
+}
+
+.quantity-field{
+  width: 95%;
+  margin-left: ;
+}
+
+.l button{
+  
+  margin: 10px;
+  margin-left: 130px;
+}
+
+
+
+.text{
+  width: 350px;
+  margin-left: 0;
+}
+
+.m-block{
+  width:350px;
+  padding: 0;
+  margin: 0;
+}
+
+
+.footer{
+  width: 360px;
+  text-align: center;
+  background: silver;
+  margin-top: 10px;
+}
+.logout{
+  width: 110px;
+  justify-items: center;
+}
+
+.logo{
+  margin-left: 90px;
+
+}
+.nav-part{
+  width: 350px;
+  display: inline;
+  margin: 0;
+}
+
+.search button{
+  top: 63px;
+  right: 0;
+}
+
+.logout{
+  margin-left: 130px;
+}
+
+#main ul li:hover ul{
+  z-index: 100;
+  
+}
+
+#main ul li ul {
+  margin-left: -70px;
+}
+
+
+
+}
+
+
+
+
+
+
+
