@@ -7,7 +7,7 @@ from django.conf import settings
 
 
 # Forms import
-from .forms import ImageForm, ProductForm, CategoryForm, SubCategoryForm, CartForm, DimensionForm, PrimaryMaterialForm, VendorForm
+from .forms import ImageForm, ProductForm, ProductForm_1, ProductForm_2, CategoryForm, SubCategoryForm, CartForm, DimensionForm, PrimaryMaterialForm, VendorForm
 from accounts.forms import SignupCustomerForm
 from django.forms import modelformset_factory
 
@@ -187,9 +187,22 @@ def product_add(request):
 @user_passes_test(lambda u: u.is_superuser)
 def products_display(request):
     products = Product.objects.all()
+    categories = Category.objects.all()
+    dict={}
+    for category in categories:
+        subcategories = SubCategory.objects.filter(category=category)
+        for sub_cat in subcategories:
+                if category in dict:
+                    dict[category].append(sub_cat)
+                else:
+                    dict[category]=[sub_cat]
     addtocartForm = CartForm(request.POST)
     # print(products[1].pk)
-    return render(request, 'products_display.html', {'products': products, 'addtocartForm': addtocartForm})
+    return render(request, 'products_display.html', {'products': products, 'addtocartForm': addtocartForm, 'cat_list':dict})
+
+def product_list(request, cat, sc):
+    products = Product.objects.filter(sub_category=sc)
+    return render(request, 'products_list.html', {'products':products})
 
 # View all categories
 def categories_display(request):
@@ -321,9 +334,12 @@ def sub_category_add(request):
 
 # Search
 def search(request):
-	products = Product.objects.all()
-	product_filter = ProductFilter(request.GET, queryset = products)
-	return render(request, 'search.html', {'product_filter' : product_filter})
+    products = Product.objects.all()
+    product_filter = ProductFilter(request.GET, queryset = products)
+    addtocartForm = CartForm(request.POST)
+    # product_form_first = ProductForm_1()
+    # product_form_second = ProductForm_2
+    return render(request, 'search.html', {'product_filter' : product_filter, "addtocartForm" : addtocartForm})
 
 # Cart 
 def cart_display(request):

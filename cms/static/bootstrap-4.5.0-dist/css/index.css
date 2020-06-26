@@ -1,0 +1,356 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+body {
+  font-family: "Roboto Slab", serif !important;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  background: #fff !important;
+  padding: 0 16px !important;
+  height: 60px !important;
+}
+
+.sidenav li img {
+  width: 100px !important;
+  height: 100px !important;
+  margin-left: 30% !important;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
+.sidenav li {
+  margin: auto !important;
+}
+
+.navbar-brand {
+  color: #333 !important;
+}
+
+.navbar ul li:hover {
+  background: #e91e63;
+  /* height: 55px; */
+  justify-items: center;
+
+  /* transform: scale(1); */
+}
+
+.margin {
+  margin: 0 30px;
+}
+
+.margin a {
+  color: black !important;
+}
+
+.margin img {
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 50px;
+}
+
+.nav-wrapper {
+  height: 64px !important;
+}
+.logo-tex {
+  margin-left: 60px;
+  font-family: initial;
+}
+.nav {
+  background: white !important;
+  height: 60px !important;
+}
+
+.navbar ul li a:hover {
+  color: #fff !important;
+}
+
+.navbar ul li {
+  transition: 0.8s;
+}
+
+.navbar ul li a {
+  color: #333 !important;
+  padding: 18px !important;
+}
+
+.navbar-nav {
+  background: #fff;
+  margin-right: 20px;
+  /* margin-top: 17px !important; */
+}
+
+.nav-link {
+  text-align: center;
+}
+
+.imge {
+  /* height: 50px; */
+  width: 60px;
+  margin-left: 20px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#small {
+  z-index: 999;
+}
+
+.navbar-toggler-icon {
+  background-color: #333 !important;
+}
+.collapse {
+  width: 540px !important;
+}
+
+/* -------------------------------------------------sidebar-------------------------------------- */
+.container1 {
+  position: relative;
+  margin-bottom: 100px;
+  /* padding: 8px; */
+}
+
+.p-list {
+  position: absolute;
+  left:0;
+}
+
+.container1 ul {
+  padding: 0 30px;
+  background: #fff;
+  margin-top: 0 !important;
+}
+
+.right-menu {
+  float: right !important;
+}
+
+.container1 ul li {
+  /* display: block; */
+  width: 150px;
+  text-decoration: none;
+  list-style: none;
+  color: #333;
+  /* border-bottom: #333 solid 1px; */
+
+  /* text-align: center; */
+  transition: 0.5s;
+  line-height: 35px;
+}
+
+.container1 ul ul li a,
+.container1 ul li a {
+  color: #333;
+  line-height: 2rem;
+  text-decoration: none;
+  padding: 10px 0;
+  /* padding-right: 140px; */
+}
+
+.container1 ul ul {
+  display: none;
+  position: absolute;
+  top: -40px;
+  left: 180px;
+  text-decoration: none;
+  color: #333;
+  /* border-right: solid #333 1px; */
+  padding: 0 8px;
+  padding-top: 8px;
+}
+
+/* .hei1{
+  position: absolute;
+  top:-30px !important;  
+}
+
+.hei3{
+  position: absolute;
+  top:-20px !important;  
+}
+
+.hei3{
+  position: absolute;
+  top:-10px !important;  
+} */
+
+
+
+
+.container1 .last-child li {
+  border-right: none;
+}
+
+.container1 ul ul li {
+  width: 180px;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  border-right: solid rgb(255, 253, 253) 1px;
+  transition: 0.5s;
+}
+
+.container1 ul ul li a {
+  padding: 5px 35px;
+}
+
+.container1 ul li:hover ul {
+  display: inline;
+  text-decoration: none;
+  z-index: 99;
+  background-color: #fff;
+}
+
+.container1 ul li ul li:hover {
+  margin-left: 10px;
+  /* background-color: #e91e63; */
+  border-bottom: #c50043 solid 1px;
+  color: #000;
+  background: #f8f8f8;
+}
+
+.container1 ul li ul li a:hover {
+  color:black;
+  background-color: #f8f8f8;
+}
+
+.img2 {
+  background: url(../../images/front.jpg) no-repeat
+    center center/cover;
+  width: 100%;
+  height: 430px;
+  /* position: absolute;
+  top: 0; */
+  background-attachment: fixed;
+  left: 200px;
+}
+.img1 {
+  background: url(../../images/front.jpg) no-repeat
+    center center/cover;
+  width: 83.6%;
+  height: 430px;
+  position: absolute;
+  top: 0;
+  background-attachment: fixed;
+  left: 200px;
+}
+
+.container1 ul li:hover {
+  /* background: #e91e63; */
+  /* color:#e91e63; */
+  border-bottom: solid #c50043 1px;
+  background: #f8f8f8;
+
+}
+.container1 ul li a:hover {
+  color: #000;
+}
+
+/* --------------------------------------------card---------------------------------- */
+
+.a-1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.a-1 h1 {
+  font-family: initial;
+  font-size: 45px !important;
+  color: #c50043;
+  margin-top: 0;
+}
+
+.container {
+  margin-top: 10px;
+  border-bottom: #c7c7c7 1px solid;
+}
+
+.img14 {
+  background: url("../../images/bc.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 300px;
+  margin-top: 100px;
+}
+
+.img15 {
+  background: url("../../abstract-architecture-black-and-white-boardwalk-262367.jpg")
+    no-repeat center center/cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 300px;
+  margin-top: 100px;
+}
+/* -------------------------------------------------------------------slider--------------------- */
+
+.slider-items img {
+  height: 280px;
+  width: 280px;
+  align-items: center !important;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.slick-prev,
+.slick-arrow {
+  margin-left: 30px !important;
+  z-index: 999;
+  /* background: black !important; */
+}
+
+.slick-next {
+  margin-right: 60px !important;
+  z-index: 999;
+  /* background: black !important; */
+  width: 50px !important;
+  height: 50px !important;
+}
+.slick-arrow button #text {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.text {
+  text-align: center;
+  /* max-width: 280px; */
+  margin: 0 30px;
+}
+/* .slider-items {
+  justify-content: center !important;
+  align-items: center !important;
+} */
+
+.text button {
+  background: #e91e63;
+}
+
+/* -------------------------------------------------------------footer------------------------------------------------------ */
+
+footer {
+  background: #e91e63;
+  color: #fff;
+  text-align: center;
+
+  margin-top: 100px;
+}
+
+/* ----------------------------------------------------mobile version---------------------------- */
+.collapsible-body {
+  /* height: 20px !important; */
+}
+
+.collapsible-body a {
+  /* width: 47px; */
+
+  padding: 10px 0;
+  padding-right: 190px;
+  text-decoration: none;
+  color: #333;
+  /* margin-left: 30px; */
+}
+
+.right-menu {
+  z-index: 999;
+}

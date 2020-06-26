@@ -1,6 +1,45 @@
 from django import forms
 from .models import Product, Images, Category, SubCategory, Cart, Dimension, PrimaryMaterial, Vendor
 
+class ProductForm_1(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = (  "name",
+                    "vendor_model_no",
+                    "model_no",
+                    "finish",
+                    "color",
+                    "weight",
+                    "unit",
+                    "packing",
+        )
+
+class ProductForm_2(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ("cbm",
+                  "min_price",
+                  "max_price",
+                  "moq",
+                  "lead_time",
+                  "remarks",
+                  "category",
+                  "sub_category",
+                 )
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['sub_category'].queryset = SubCategory.objects.none()
+
+            if 'category' in self.data:
+                try:
+                    category_id = int(self.data.get('category'))
+                    self.fields['sub_category'].queryset = SubCategory.objects.filter(category_id=category_id).order_by('sub_category')
+                except (ValueError, TypeError):
+                    pass  # invalid input from the client; ignore and fallback to empty sub_category queryset
+            elif self.instance.pk:
+                self.fields['sub_category'].queryset = self.instance.category.sub_category_set.order_by('sub_category')
+
+
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product

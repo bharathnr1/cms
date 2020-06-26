@@ -1,13 +1,641 @@
+{% load static %} 
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Product</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'css/materialize.min.css' %}"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}" />
+
+    <!-- Compiled and minified CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    /> -->
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'bootstrap-4.5.0-dist/css/search.css' %}" />
+
+    <!-- ----------------------slick------------------------------------ -->
+
+    <link rel="stylesheet" href="{% static 'slick-1.8.1/slick/slick.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonta/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'slick-1.8.1/slick/slick-theme.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonta/fontawesome.min.css' %}" />
+
 </head>
 <body>
 
-  <form method="get">
+  <nav>
+    <div class="nav-wrapper white">
+      <div class="margin">
+        <a href="#"><img src="{% static 'images/hstc_logo.jpeg' %}" class="brand-logo" alt=""/></a>
+        <a href="#" class="brand-logo hide-on-med-and-down logo-tex">HSTC</a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <div class="right-menu">
+          <a href="#" data-target="mobile-side" class="sidenav-trigger"><i class="material-icons hide-on-large-only">menu</i></a>
+        </div>
+
+        <ul class="right hide-on-med-and-down">
+          <li class><a href="#">Home</a></li>
+          <li><a href="#">Product Search</a></li>
+          <li><a href="#">Add Product</a></li>
+          <!-- <li><div onclick="show_hide_1()" class="button22">
+            <a>Inventory<i class="fa fa-caret-down right " aria-hidden="true"></i></a>
+          </div>
+        </li> -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Inventory<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div style="display: none; " id="drop-content-0" class="left1">
+    <div class="colam">
+
+  </div>
+  </div>
+  
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#">Create Catagory</a></li>
+    <li><a href="#">Create Sub-Catagory</a></li>
+    <!-- <li class="divider"></li> -->
+    <li><a href="#">View Catagory</a></li>
+    <li><a href="#">View Sub-Catagory</a></li>
+    <li><a href="#">Account Apporvals</a></li>
+  </ul>
+
+
+
+  <ul class="sidenav image1" id="mobile-nav">
+    <li><img src="{% static 'images/hstc_logo.jpeg' %}" alt="" /></li>
+    <li><a href="#">Home</a></li>
+          <li><a href="#">Product Search</a></li>
+          <li><a href="#">Add Product</a></li>
+          <li><a href="#">Create Catagory</a></li>
+          <li><a href="#">Create Sub-Catagory</a></li>
+          <li><a href="#">View Catagory</a></li>
+          <li><a href="#">View Sub-Catagory</a></li>
+          <li><a href="#">Account Apporvals</a></li>
+          <li><a href="#">Cart</a></li>
+  </ul>
+
+      <!-- ---------------------------------------------------------mobile------------------------------- -->
+
+      <div class="right-menu">
+        <ul class="sidenav right" id="mobile-side">
+          <li>
+  
+            <form method="GET" class="formclass">
+              <!-- <form method="get" class="mob-leftpane">
+                {{ product_filter.form.as_ul }}
+                <button type="submit">Search</button>
+                {{ product_filter.form.name }}
+        
+              </form> -->
+            <form method="get">
+              <div class="input-field">
+                {{ product_filter.form.category }}
+                <label class="labelInFields">Category</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.sub_category }}
+                <label class="labelInFields" >Sub-Category</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.name }}
+                <label class="labelInFields" for="first_name">Product Name:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.vendor_model_no }}
+                <label class="labelInFields" for="first_name">Vendor Model No:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.finish }}
+                <label class="labelInFields" for="first_name">Finish:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.color }}
+                <label class="labelInFields" for="first_name">Color:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.weight }}
+                <label class="labelInFields" for="first_name">Weight:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.unit }}
+                <label class="labelInFields" for="first_name">Unit:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.packing }}
+                <label class="labelInFields" for="first_name">Packing:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.cbm }}
+                <label class="labelInFields" for="first_name">CBM:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.max_price }}
+                <label class="labelInFields" for="first_name">Max Price:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.min_price }}
+                <label class="labelInFields" for="first_name">Min Price:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.moq }}
+                <label class="labelInFields" for="first_name">MOQ:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.lead_time }}
+                <label class="labelInFields" for="first_name">Lead Time:</label>
+              </div>
+              <div class="input-field">
+                {{ product_filter.form.remarks }}
+                <label class="labelInFields" style="width: 20px;" for="icon_prefix2">Remarks:</label>
+              </div>
+              <div class="form-btn">
+                <button class="btn right isalwaysright" type="submit">Search</button>
+                <div><br></div>
+              </div>
+            </div>
+            </form>                       
+            <!-- <form method="get" class="mob-leftpane"> -->
+              <!-- <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  placeholder=".form-control-sm"
+                />
+              </div>
+              <label>Materialize Select</label>
+              <div class="input-field col s12">
+                <select>
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+  
+              <div class="form-group">
+                <label for="exampleFormControlSelect2"
+                  >Example multiple select</label
+                >
+                <select
+                  multiple
+                  class="form-control"
+                  id="exampleFormControlSelect2"
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-info">Info</button>
+              <div class="row12">
+                  <div class="input-field">
+                    <input id="search" type="search" class="validate search1" />
+                    <label for="search">Search</label>
+                    <div class="moving">
+                        <button class="button1 btn pulse right mobil-btn1">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div> -->
+                <!-- {{ product_filter.form.as_p }}
+                <div class="moving">
+                  <button class="button1 btn  right">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </div>            </form> -->
+          </li>
+        </ul>
+        
+      </div>
+  
+      <!-- -------------------------------------------------search-bar------------------------------ -->
+  <form class="seach-small-form">
+    <div class="hider-on-mid-and-down">
+      <div class="main hide-on-med-and-down">
+        <div class="row">
+          <div class="input-field">
+            {{ product_filter.form.name }}
+            <label for="email">Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            {{ product_filter.form.vendor_model_no }}
+            <label for="email">Vendor Model Number</label>
+          </div>
+        </div>
+        <div class="input-field">
+          {{ product_filter.form.category }}
+          <label>Category</label>
+        </div>
+  
+        <div class="input-field">
+          {{ product_filter.form.sub_category }}
+          <label>Sub-Category</label>
+        </div>
+        <!-- <div class="row">
+          <div class="input-field">
+            <input id="search" type="search" class="validate search" />
+            <label for="search">Search</label>
+          </div>
+        </div> -->
+        <div class="moving">
+          <button class="button1 btn  right">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="dropdown1 moving">
+          <button  class="button22 button1 btn5 btn  right pulse">
+            <a href="#login" class="tooltipped modal-trigger" data-position="left" data-tooltip="Addvance Tool"><i class="fa fa-plus" aria-hidden="true"></i></a>
+          </button>
+      </div>
+    </div>
+  </form>
+  
+    <!-- Advanced Search -->
+    <div class="modal" id="login">
+      <div class="head12 z-depth-3">
+        <h5 class="right a">Advanced Search</h5>
+      <h5 class="modal-close x"><i class="fa fa-times" aria-hidden="true"> </i></h5>
+    </div>
+  
+    <form method="GET" class="form">
+      <!-- <form method="get" class="mob-leftpane">
+        {{ product_filter.form.as_ul }}
+        <button type="submit">Search</button>
+        {{ product_filter.form.name }}
+
+      </form> -->
+    <!-- <form method="get"> -->
+      <div class="input-field">
+        {{ product_filter.form.category }}
+        <label>Category</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.sub_category }}
+        <label>Sub-Category</label>
+      </div>
+
+      <div class="input-field">
+        {{ product_filter.form.name }}
+        <label for="first_name">Product Name:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.vendor_model_no }}
+        <label for="first_name">Vendor Model No:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.finish }}
+        <label for="first_name">Finish:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.color }}
+        <label for="first_name">Color:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.weight }}
+        <label for="first_name">Weight:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.unit }}
+        <label for="first_name">Unit:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.packing }}
+        <label for="first_name">Packing:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.cbm }}
+        <label for="first_name">CBM:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.max_price }}
+        <label for="first_name">Max Price:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.min_price }}
+        <label for="first_name">Min Price:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.moq }}
+        <label for="first_name">MOQ:</label>
+      </div>
+      <div class="input-field">
+        {{ product_filter.form.lead_time }}
+        <label for="first_name">Lead Time:</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mode_edit</i>
+        {{ product_filter.form.remarks }}
+        <label for="icon_prefix2">Remarks:</label>
+      </div>
+      <div class="form-btn">
+        <button class="btn rightbtn" type="submit">Search</button>
+        <div><br><br></div>
+      </div>
+    </div>
+    </form>           
+  </div>
+  
+    <!-- -----------------------------------------------------card-search--------------------------------- -->
+
+    <!-- {% for prod in product_filter.qs %}
+    <li>{{prod.name}}</li>
+    {% for image in prod.images_set.all %}
+    <img src="{{image.image.url}}" alt="" width="100" height="100">
+    {% endfor %}
+  {% endfor %} -->
+<!-- RUPPEES SYMBOL &#8377; -->
+  
+    <div class="main1">
+      <div class="main3 hide-on-med-and-down">
+      {% for prod in product_filter.qs %}
+      <div class="main2">
+        <div class="card row4">
+          <div class="card-image">
+              {% for image in prod.images_set.all %}
+                {% if forloop.counter == 1 %}
+                <a href="{% url 'catalog:prod_display' prod.slug %}">
+                  <img src="{{image.image.url}}" alt="" />
+                </a>
+                  {% endif %}
+              {% endfor %}
+            </a>
+          </div>
+          <div class="card-content font-classic">
+            <span class="card-title activator grey-text text-darken-4 text">{{prod.name}}<i class="material-icons right">more_vert</i></span>
+              <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.id}}" name="{{prod.id}}">
+                {% csrf_token %}
+                {% bootstrap_form addtocartForm %}
+                <input type="hidden" name="product" value="{{ prod.id }}">
+                <br>
+                <button class="btn cartbtn" type="submit" name='addtocart' id="addtocart" >Add to Cart</button> 
+                <!-- Need to show only one of the buttons at a time. Initally add to cart and once item is added,
+                     need to disable add and show remove -->
+                <button class="btn cartbtn" type="submit" name='removefromcart' id="removefromcart">Remove from Cart</button>
+            </form>
+              <!-- <a href="#"
+                ><button class="btn">
+                  Add To Chart
+                </button></a
+              > -->
+              <!-- <input
+                class="size11 right"
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max=""
+                value="1"
+              /> -->
+            </p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"
+              >Product Detail<i class="material-icons right">close</i></span
+            >
+            <div class="table1">
+              <table>
+                <tr>
+                  <th>Model Number</th>
+                  <th>{{prod.model_no}}</th>
+                </tr>
+                <tr>
+                  <th>Finish</th>
+                  <th>{{prod.finish}}</th>
+                </tr>
+                <tr>
+                  <th>Color</th>
+                  <th>{{prod.color}}</th>
+                </tr>
+                <tr>
+                  <th>Weight</th>
+                  <th>{{prod.weight}}</th>
+                </tr>
+              </table>
+              <a href="{% url 'catalog:prod_display' prod.slug %}">
+                <button class="btn">
+                  Read More
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+    <!-- ----------------------------------------------------mobile-mid----------------------------------- -->
+
+  <div class="main1">
+    <div class="main4 hide-on-small-only hide-on-large-only">
+      {% for prod in product_filter.qs %}
+      <div class="main2">
+        <div class="card row4">
+          <div class="card-image">
+              {% for image in prod.images_set.all %}
+                {% if forloop.counter == 1 %}
+                  <a href="{% url 'catalog:prod_display' prod.slug %}">
+                    <img src="{{image.image.url}}" alt="" />
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </a>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"
+              >{{prod.name}}r<i class="material-icons right"
+                >more_vert</i
+              ></span
+            >
+
+            <p>
+              <a href="#"
+                ><button class="btn">
+                  Add To Chart
+                </button></a
+              >
+              <input
+                class="size11 right"
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max=""
+                value="1"
+              />
+            </p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"
+              >Product Detail<i class="material-icons right">close</i></span
+            >
+            <div class="table1">
+              <table>
+                <tr>
+                  <th>Model Number</th>
+                  <th>{{prod.model_no}}</th>
+                </tr>
+                <tr>
+                  <th>Finish</th>
+                  <th>{{prod.finish}}</th>
+                </tr>
+                <tr>
+                  <th>Color</th>
+                  <th>{{prod.color}}</th>
+                </tr>
+                <tr>
+                  <th>Weight</th>
+                  <th>{{prod.weight}}</th>
+                </tr>
+              </table>
+              <a href="{% url 'catalog:prod_display' prod.slug %}">
+                <button class="btn">
+                  Read More
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}        
+    </div>
+  </div>
+
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <!-- ----------------------------------------------------mobile-small--------------------------------------- -->
+    <div class="main1">
+      <div class="main5 hide-on-med-and-up">
+        {% for prod in product_filter.qs %}
+        <div class="main2">
+         <div class="card row4">
+          <div class="card-image">
+              {% for image in prod.images_set.all %}
+                {% if forloop.counter == 1 %}
+                <a href="{% url 'catalog:prod_display' prod.slug %}">
+                  <img src="{{image.image.url}}" alt="" />
+                </a>
+                {% endif %}
+              {% endfor %}
+              </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"
+              >high back chair<i class="material-icons right"
+                >more_vert</i
+              ></span
+            >
+
+            <p>
+              <a href="#"
+                ><button class="btn">
+                  Add To Chart
+                </button></a
+              >
+              <input
+                class="size11 right"
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max=""
+                value="1"
+              />
+            </p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"
+              >Product Detail<i class="material-icons right">close</i></span
+            >
+            <div class="table1">
+              <table>
+                <tr>
+                  <th>Model Number</th>
+                  <th>{{prod.model_no}}</th>
+                </tr>
+                <tr>
+                  <th>Finish</th>
+                  <th>{{prod.finish}}</th>
+                </tr>
+                <tr>
+                  <th>Color</th>
+                  <th>{{prod.color}}</th>
+                </tr>
+                <tr>
+                  <th>Weight</th>
+                  <th>{{prod.weight}}</th>
+                </tr>
+              </table>
+              <a href="{% url 'catalog:prod_display' prod.slug %}">
+                <button class="btn">
+                  Read More
+                </button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+    <!-- -----------------------------------------------footer------------------------------------------------ -->
+  <footer>
+    <div><p>copyright © 2020 S-Hybrid SolutionAll Right Reserved</p></div>
+  </footer>
+</div>
+
+
+  <!-- Bharth's Work -->
+  <!-- <form method="get">
     {{ product_filter.form.as_p }}
     <button type="submit">Search</button>
   </form>
@@ -18,7 +646,106 @@
     <img src="{{image.image.url}}" alt="" width="100" height="100">
     {% endfor %}
   {% endfor %}
-  </ul>
+  </ul> -->
+    <!-- -------------------------------------------------java-script---------------------------------- -->
+    <!--JavaScript at end of body for optimized loading-->
+
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{% static 'slick-1.8.1/slick/slick.min.js' %}"></script>
+    <script>
+      $(".dropdown-trigger").dropdown();
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
+    </script>
+    <script>
+      var elem = document.querySelector(".collapsible.expandable");
+      var instance = M.Collapsible.init(elem, {
+        accordion: false,
+      });
+    </script>
+
+    <script>
+      $(function () {
+        $(".slider").slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        });
+      });
+    </script>
+
+    <script>
+      $(function () {
+        $(".slider1").slick({
+          infinite: true,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        });
+      });
+    </script>
+
+    <script>
+      $(function () {
+        $(".slider2").slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("select").formSelect();
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        M.updateTextFields();
+      });
+    </script>
+
+    <script>
+      $(".banner-area").slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        fade: true,
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+    </script>
+
+    <script>
+      function show_hide_1() {
+        var click = document.getElementById("drop-content-0") ;
+        if(click.style.display ==="none") {
+          click.style.display = "block" ;
+        }else{
+          click.style.display = "none" ;
+        }
+      }
+    </script>
+
+<script>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+</script>
 
 </body>
 </html>

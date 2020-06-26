@@ -1,23 +1,526 @@
+{% load static %}
 {% load bootstrap4 %}
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Products</title>
-</head>
-<body>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <!-- <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    /> -->
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'css/materialize.min.css' %}"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}" />
+
+    <!-- Compiled and minified CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    /> -->
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'bootstrap-4.5.0-dist/css/index.css' %}" />
+
+    <!-- ----------------------slick------------------------------------ -->
+
+    <link rel="stylesheet" href="{% static 'slick-1.8.1/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'fonta/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'slick-1.8.1/slick/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'fonta/fontawesome.min.css' %}">
+  </head>
+  <!-- --------------------------------------------------nav-bar----------------------------------------- -->
+  <body>
+    <nav>
+      <div class="nav-wrapper white">
+          <div class="margin">
+            <a href="#"><img src="{% static 'images/hstc_logo.jpeg' %}" class="brand-logo" alt=""></a>
+        <a href="#" class="brand-logo hide-on-med-and-down logo-tex">HSTC</a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <div class="right-menu">
+        <a href="#" data-target="mobile-side" class="sidenav-trigger"
+><i class="material-icons hide-on-large-only">menu</i></a
+>
+</div>
+
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
+          <li><a href="{% url 'catalog:search' %}">Product Search</a></li>
+          <li><a href="{% url 'catalog:product_add' %}">Add Product</a></li>
+          <li><a href="{% url 'catalog:category_add' %}">Create Catagory</a></li>
+          <li><a href="{% url 'catalog:sub_category_add' %}">Create Sub-Catagory</a></li>
+          <li><a href="{% url 'catalog:categories_display' %}">View Catagory</a></li>
+          <li><a href="{% url 'catalog:sub_categories_display' %}">View Sub-Catagory</a></li>
+          <li><a href="{% url 'catalog:approve_staff' %}">Account Apporvals</a></li>
+          <li><a href="{% url 'catalog:cart_display' %}">Cart</a></li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+
+    <ul class="sidenav image1" id="mobile-nav">
+      <li><img src="{% static 'images/hstc_logo.jpeg' %}" alt="" /></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="{% url 'catalog:search' %}">Product Search</a></li>
+      <li><a href="{% url 'catalog:product_add' %}">Add Product</a></li>
+      <li><a href="{% url 'catalog:category_add' %}">Create Catagory</a></li>
+      <li><a href="{% url 'catalog:sub_category_add' %}">Create Sub-Catagory</a></li>
+      <li><a href="{% url 'catalog:categories_display' %}">View Catagory</a></li>
+      <li><a href="{% url 'catalog:sub_categories_display' %}">View Sub-Catagory</a></li>
+      <li><a href="{% url 'catalog:approve_staff' %}">Account Apporvals</a></li>
+      <li><a href="{% url 'catalog:cart_display' %}">Cart</a></li>
+
+    </ul>
+
     <!-- <a href="{% url 'catalog:approve_staff' %}"><button>Pending for approval Staff Accounts</button></a> -->
-    <a href="{% url 'catalog:categories_display' %}"><button>View Categories</button></a>
+    <!-- <a href="{% url 'catalog:categories_display' %}"><button>View Categories</button></a>
     <a href="{% url 'catalog:sub_categories_display' %}"><button>View Sub-Categories</button></a>
     <a href="{% url 'catalog:product_add' %}"><button>Add Product</button></a>
     <a href="{% url 'catalog:category_add' %}"><button>Add a new Category</button></a>
     <a href="{% url 'catalog:sub_category_add' %}"><button>Add a new Sub-Category</button></a>
     <a href="{% url 'catalog:search' %}"><button>Product Search</button></a>
     <a href="{% url 'catalog:cart_display' %}"><button>Cart</button></a>
+ -->
 
-    <h1>Here are the Products</h1>
+
+
+
+
+<!-- -------------------------------------------------------side-bar------------------------------------ -->
+
+<!-- ---------------------------------------------------------mobile------------------------------- -->
+
+      
+
+
+<div class="right-menu">
+    <ul class="collapsible expandable sidenav right" id="mobile-side">
+         <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-1-1-1 </a></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-2-2-2 </a></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+            <div class="collapsible-body"><a href="#"> Product-3-3-3 </a></div>
+          </li>
+        </ul>
+    </div>
+    
+    <!-- -------------------------------------------------web------------------------------ -->
+        <div class="container1 hide-on-med-and-down">
+            <ul>
+              {% for cat, sub_cat in cat_list.items %}
+                <li><a href='#'>{{cat}}</a>
+                  <div class="p-list">
+                    <ul class="hei1">
+                      {% for sc in sub_cat %}
+                        <li><a href="{% url 'catalog:product_list' cat sc.id %}">{{sc}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </li>
+              {% endfor %}
+                <!-- <li><a href='#'>list</a></li>
+                <li><a href='#'>Product</a>
+                  <div class="p-list">
+                  <ul class="hei1">
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <ul class="hei2">
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <ul class="hei3">
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <ul class="hie4">
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                        </ul>
+                      </ul>
+                    </ul>
+                  </ul>
+                  </div>
+                </li>
+                <li><a href='#'>list</a></li>
+                <li><a href='#'>Product-Me</a>
+                  <div class="p-list">
+                  <ul class="hei1">
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <li><a href='#'>Product 1</a></li>
+                    <ul class="hei1">
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <li><a href='#'>Product 2</a></li>
+                      <ul class="hei1">
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <li><a href='#'>Product 3</a></li>
+                        <ul class="last-child hei1">
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                          <li><a href='#'>Product 4</a></li>
+                        </ul>
+                      </ul>
+                    </ul>
+                  </ul>
+          
+                </li> -->
+            </ul>
+            <div class="img1"></div>
+          </div>
+          <div class="hide-on-large-only img2"></div>
+          
+    
+    
+    
+          <!-- ------------------------------------------------new-arrival----------------------------- -->
+          
+          
+    <div class="container">
+      <div class="a-1">
+        <h1>All Products</h1>
+      </div>
+    </div>
+    
+
+    <div class="slider hide-on-med-and-down">
+        {% for prod in products %}
+        <div class="slider-items">
+
+          {% for image in prod.images_set.all %}
+              {% if forloop.counter == 1 %}
+                  <a href="{% url 'catalog:prod_display' prod.slug %}">  <img src="{{image.image.url}}" alt="images"> </a>
+              {% endif %}
+          {% endfor %}
+      
+          <div class="text">
+            <h5><a href="{% url 'catalog:prod_display' prod.slug %}">{{prod.name}}</a></h5>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, amet!</p>
+      
+            <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.id}}" name="{{prod.id}}">
+              {% csrf_token %}
+              {% bootstrap_form addtocartForm %}
+              <input type="hidden" name="product" value="{{ prod.id }}">
+              <br>
+              <button type="submit" class="btn btn1" name='addtocart' id="addtocart" >Add to Cart <i class="fas fa-plus"></i> </button> 
+              <!-- Need to show only one of the buttons at a time. Initally add to cart and once item is added,
+                   need to disable add and show remove -->
+              <button type="submit" class="btn btn1" name='removefromcart' id="removefromcart">Remove from Cart  <i class="fas fa-plus"></i> </button>
+          </form>
+      
+      <!-- 
+            <button type="button" class="btn btn1" data-toggle="button" aria-pressed="false" autocomplete="off">Read More <i
+                class="fas fa-plus"></i></button>
+       -->
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+
+<!-- -----------------------------------------------mobile-med--------------------------------------------- -->
+
+<div class="slider-med hide-on-large-only hide-on-small-only">
+    {% for prod in products %}
+  
+    <div class="slider-items">
+      {% for image in prod.images_set.all %}
+       {% if forloop.counter == 1 %}
+       <div class="image">
+        <a href="{% url 'catalog:prod_display' prod.slug %}">
+          <img src="{{image.image.url}}" alt="" width="100" height="100"></a>
+       </div>
+        {% endif %}
+      {% endfor %}
+      <div class="text">
+        <h5><a href="{% url 'catalog:prod_display' prod.slug %}">{{prod.name}}</a></h5>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, amet!</p>
+   
+  
+        <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.id}}" name="{{prod.id}}">
+          {% csrf_token %}
+          {% bootstrap_form addtocartForm %}
+          <input type="hidden" name="product" value="{{ prod.id }}">
+          <br>
+          <!-- <button type="submit" name='addtocart' id="addtocart" >Add to Cart</button>  -->
+          <button type="submit" class="btn btn1" data-toggle="button" aria-pressed="false" autocomplete="off">Add to Cart<i class="fas fa-plus"></i></button>
+          <button type="submit" class="btn btn1" name='removefromcart' id="removefromcart">Remove from Cart</button>
+          <!-- Need to show only one of the buttons at a time. Initally add to cart and once item is added,
+               need to disable add and show remove -->
+      </form>      
+    </div> 
+</div>
+      {% endfor %} 
+      
+    
+  </div>
+
+
+<!-- ---------------------------------------------mobile-small Djnago Integration is left-------------------------------------- -->
+<div class="slider2 hide-on-med-and-up ">
+    {% for prod in products %}
+    <div class="slider-items">
+       {% for image in prod.images_set.all %}
+        {% if forloop.counter == 1 %}
+          <a href="{% url 'catalog:prod_display' prod.slug %}">  <img src="{{image.image.url}}" alt="images"> </a>
+        {% endif %}
+      {% endfor %}
+      <div class="text">
+          <h5><a href="{% url 'catalog:prod_display' prod.slug %}">{{prod.name}}</a></h5>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, amet!</p>
+          <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.id}}" name="{{prod.id}}">
+            {% csrf_token %}
+            {% bootstrap_form addtocartForm %}
+              <input type="hidden" name="product" value="{{ prod.id }}">
+              <br>
+              <button type="submit" class="btn btn1" name='addtocart' id="addtocart" >Add to Cart <i class="fas fa-plus"></i> </button> 
+              <!-- Need to show only one of the buttons at a time. Initally add to cart and once item is added,
+                   need to disable add and show remove -->
+              <button type="submit" class="btn btn1" name='removefromcart' id="removefromcart">Remove from Cart  <i class="fas fa-plus"></i> </button>
+          </form>        
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  
+  <div class="img14"></div>
+
+          <!-- ------------------------------------------------new-arrival----------------------------- -->
+          
+          
+          <div class="container">
+            <div class="a-1">
+              <h1>All Products</h1>
+            </div>
+          </div>
+          
+      
+          <div class="slider hide-on-med-and-down">
+              {% for prod in products %}
+              <div class="slider-items">
+      
+                {% for image in prod.images_set.all %}
+                    {% if forloop.counter == 1 %}
+                        <a href="{% url 'catalog:prod_display' prod.slug %}">  <img src="{{image.image.url}}" alt="images"> </a>
+                    {% endif %}
+                {% endfor %}
+            
+                <div class="text">
+                  <h5><a href="{% url 'catalog:prod_display' prod.slug %}">{{prod.name}}</a></h5>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, amet!</p>
+            
+                  <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.id}}" name="{{prod.id}}">
+                    {% csrf_token %}
+                    {% bootstrap_form addtocartForm %}
+                    <input type="hidden" name="product" value="{{ prod.id }}">
+                    <br>
+                    <button type="submit" class="btn btn1" name='addtocart' id="addtocart" >Add to Cart <i class="fas fa-plus"></i> </button> 
+                    <!-- Need to show only one of the buttons at a time. Initally add to cart and once item is added,
+                         need to disable add and show remove -->
+                    <button type="submit" class="btn btn1" name='removefromcart' id="removefromcart">Remove from Cart  <i class="fas fa-plus"></i> </button>
+                </form>
+            
+            <!-- 
+                  <button type="button" class="btn btn1" data-toggle="button" aria-pressed="false" autocomplete="off">Read More <i
+                      class="fas fa-plus"></i></button>
+             -->
+                </div>
+              </div>
+              {% endfor %}
+          </div>
+      
+      <!-- -----------------------------------------------mobile-med--------------------------------------------- -->
+      
+      <div class="slider-med hide-on-large-only hide-on-small-only">
+          {% for prod in products %}
+        
+          <div class="slider-items">
+            {% for image in prod.images_set.all %}
+             {% if forloop.counter == 1 %}
+             <div class="image">
+              <a href="{% url 'catalog:prod_display' prod.slug %}">
+                <img src="{{image.image.url}}" alt="" width="100" height="100"></a>
+             </div>
+              {% endif %}
+            {% endfor %}
+            <div class="text">
+              <h5><a href="{% url 'catalog:prod_display' prod.slug %}">{{prod.name}}</a></h5>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, amet!</p>
+         
+        
+              <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.id}}" name="{{prod.id}}">
+                {% csrf_token %}
+                {% bootstrap_form addtocartForm %}
+                <input type="hidden" name="product" value="{{ prod.id }}">
+                <br>
+                <!-- <button type="submit" name='addtocart' id="addtocart" >Add to Cart</button>  -->
+                <button type="submit" class="btn btn1" data-toggle="button" aria-pressed="false" autocomplete="off">Add to Cart<i class="fas fa-plus"></i></button>
+                <button type="submit" class="btn btn1" name='removefromcart' id="removefromcart">Remove from Cart</button>
+                <!-- Need to show only one of the buttons at a time. Initally add to cart and once item is added,
+                     need to disable add and show remove -->
+            </form>      
+          </div> 
+      </div>
+            {% endfor %} 
+            
+          
+        </div>
+      
+      
+      <!-- ---------------------------------------------mobile-small Djnago Integration is left-------------------------------------- -->
+      <div class="slider2 hide-on-med-and-up ">
+          {% for prod in products %}
+          <div class="slider-items">
+             {% for image in prod.images_set.all %}
+              {% if forloop.counter == 1 %}
+                <a href="{% url 'catalog:prod_display' prod.slug %}">  <img src="{{image.image.url}}" alt="images"> </a>
+              {% endif %}
+            {% endfor %}
+            <div class="text">
+                <h5><a href="{% url 'catalog:prod_display' prod.slug %}">{{prod.name}}</a></h5>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, amet!</p>
+                <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.id}}" name="{{prod.id}}">
+                  {% csrf_token %}
+                  {% bootstrap_form addtocartForm %}
+                    <input type="hidden" name="product" value="{{ prod.id }}">
+                    <br>
+                    <button type="submit" class="btn btn1" name='addtocart' id="addtocart" >Add to Cart <i class="fas fa-plus"></i> </button> 
+                    <!-- Need to show only one of the buttons at a time. Initally add to cart and once item is added,
+                         need to disable add and show remove -->
+                    <button type="submit" class="btn btn1" name='removefromcart' id="removefromcart">Remove from Cart  <i class="fas fa-plus"></i> </button>
+                </form>        
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+
+
+ <!-- Bharath's work below -->
+
+    <!-- <h1>Here are the Products</h1>
     {% for prod in products %}
         
     
@@ -32,10 +535,13 @@
                 <p>{{prod.name}}</p>
             </a>
             {% for image in prod.images_set.all %}
-            <a href="{% url 'catalog:prod_display' prod.slug %}">
+              {% if forloop.counter == 1 %}
+                <a href="{% url 'catalog:prod_display' prod.slug %}">
                 <img src="{{image.image.url}}" alt="" width="100" height="100">
-            </a>
+                 </a>
+              {% endif %}
             {% endfor %}
+
             <br><br>
 
             <form action="{% url 'catalog:cart_display' %}" method="post" id="{{prod.id}}" name="{{prod.id}}">
@@ -44,15 +550,85 @@
                 <input type="hidden" name="product" value="{{ prod.id }}">
                 <br>
                 <button type="submit" name='addtocart' id="addtocart" >Add to Cart</button> 
-                <!-- Need to show only one of the buttons at a time. Initally add to cart and once item is added,
-                     need to disable add and show remove -->
+                Need to show only one of the buttons at a time. Initally add to cart and once item is added,
+                     need to disable add and show remove
                 <button type="submit" name='removefromcart' id="removefromcart">Remove from Cart</button>
             </form>
-            <!-- <br><br> -->
+            <br><br>
         </div>
     
 
-    {% endfor %}
+    {% endfor %} -->
 
+   
+
+
+<!-- -----------------------------------------------footer------------------------------------------------ -->
+
+<footer>
+    <div><p>copyright © 2020 S-Hybrid SolutionAll Right Reserved</p></div>
+  </footer>
+  
+  
+  
+   
+      <!-- -------------------------------------------------java-script---------------------------------- -->
+    <!--JavaScript at end of body for optimized loading-->
+
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{% static 'slick-1.8.1/slick/slick.min.js' %}"></script>
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
+    </script>
+    <script>
+    var elem = document.querySelector('.collapsible.expandable');
+var instance = M.Collapsible.init(elem, {
+  accordion: false
+});
+    </script>
+
+
+
+<script>
+  $(function () {
+
+    $('.slider').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3
+});
+
+  });
+
+  $(function () {
+
+    $('.slider-med').slick({
+  infinite: true,
+  slidesToShow: 2,
+  slidesToScroll: 2
+});
+
+  });
+
+  $(function () {
+
+    $('.slider2').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1
+});
+
+  });
+
+
+</script>
+    
 </body>
 </html>

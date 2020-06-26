@@ -53,3 +53,6 @@ MOM - 29/05/2020
 3. PDF generation
 4. Send email
 5. Vendor 
+
+To Bharath 23/6/2020-
+1. Add to cart on product Search once clicked is redirecting to next home page. how to avoid it?

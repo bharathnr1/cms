@@ -1,0 +1,374 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{  
+  line-height: 1.5rem;
+  /* background: url(../palm-trees-at-night-258154.jpg)  no-repeat center center/cover; */
+  width: 100%;
+  height: 1fr;
+}
+
+#background{
+   /* background-image: url(../palm-trees-at-night-258154.jpg)  no-repeat center center/cover; */
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.image-logo img{
+  width: 100%;
+  border-radius: 50px;
+  margin-top: 5px;
+}
+
+.image-logo h2{
+  margin-left: 10px;
+}
+
+.image-logo{
+  
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 50px;
+  margin-right: 15px;
+}
+
+.nav-part{
+  display: grid;
+  grid-template-columns: 200px 1fr 150px;
+  padding-top: 5px;
+}
+
+
+
+.search .search-p1{
+  width: 90%;
+  height:40px;
+  font-size: 1.3rem;
+  position: relative;
+  border-radius: 20px;
+  margin-top: 10px;
+  outline: none;
+}
+
+.search i{
+  position: absolute;
+  top: 8px;
+  right: 50px;
+
+
+  
+}
+
+
+button{
+  outline: none;
+}
+
+.search input[type='text']{
+  border: 5px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.search button {
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  top: 13px;
+  right: 152px;
+  
+  width: 150px;
+  height: 42px;
+  border: 1px black solid;
+  border-radius: 20px;
+  
+}
+
+
+.logout{
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+
+
+
+
+
+
+
+
+/* log out function  */
+#main ul {
+  list-style: none;
+  border: none;
+  /* outline: none; */
+}
+
+#main ul li{
+  color: black;
+  display: inline-block;
+  padding: 1rem;
+  position: relative;
+}
+
+#main ul li a{
+  color: black;
+  text-decoration: none;
+}
+
+#main ul li:first-child i{
+  margin-left: 10px;
+}
+
+#main ul li ul {
+  display: none;
+  border: none;
+  margin-left: -100px;
+  outline: none;
+  background: rgba(235, 219, 219, 0.8);
+
+  
+}
+
+#main ul li:hover{
+  cursor: pointer;
+
+}
+
+#main ul li:hover ul{
+  display: block;
+  position: absolute;
+  border: none;
+  left: 0;
+  width: 230px;
+  padding: 10px;
+  margin-top: 1rem;
+ 
+  text-align: center;
+  /* border: 1px black solid; */
+  outline: none;
+}
+
+#main ul li:hover ul li{
+  border-bottom: 1px dotted black;
+}
+
+#main ul li:hover ul li:last-child{
+  border: none;
+}
+
+.logout ul li:first-child:hover >  i {
+  transform: rotate(180deg);
+  
+}
+
+
+
+
+
+
+
+
+
+.section {
+  display: grid;
+  grid-template-columns: 200px 1fr  ;
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 5px;
+  margin-top: 20px;
+}
+
+
+
+.multi-level .item ul,
+input [type="checkbox"] {
+  display: none;
+}
+
+.item {
+  width: 100%;
+  /* background: rgba(235, 219, 219, 0.8); */
+  /* margin-top: 10px; */
+  margin-left: 10px;
+  
+}
+
+.item label {
+  line-height: 2rem;
+  cursor: pointer;
+  /* padding-right: 130px; */
+}
+
+.item  input:checked ~ ul  {
+  display: block;
+  margin-left: 20px;
+}
+
+
+
+.multi-level{
+  display: block;
+  margin-top: 19px;
+  /* text-align: center; */
+  justify-content: space-between;
+  margin-left: 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+}
+}
+
+.multi-level label{
+  /* font-size: 1.7rem; */
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+.box2{
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-auto-rows: 400px;
+  
+  grid-gap: 10px;
+  grid-auto-rows: auto;
+
+
+}
+
+.box2 .card{
+  display: grid;
+  /* grid-auto-rows: 400px; */
+  justify-items: center;
+  line-height: 3rem;
+  margin-top: 20px;
+  
+}
+
+.box2 img{
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  
+}
+
+.card p{
+  font-size: 1.3rem;
+  margin-bottom: 0px;
+}
+
+.quantity-field{
+  background: gray;
+  font-size: 1rem;
+  height: 30Px;
+  margin-top: 10px;
+}
+
+.card .add{
+  padding-right: 35px;
+  height: 35px;
+
+}
+
+.card-b{
+  margin-bottom: 20px;
+}
+
+
+.card .add a {
+  margin-left: 22px;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  bottom: 1px;
+}
+
+.card input{
+  width: 45px;
+  height: 30px;
+  float: right;
+  margin-left: 10px;
+  margin-top: 11px;
+}
+
+
+
+}
+
+
+
+.quantity-field{
+  text-align: center;
+  background:rgba(235, 219, 219, 0.8);
+}
+
+.copyright span{
+font-weight: bold;  
+}
+
+.box3{
+  display: grid;
+  grid-column: 1/ -1;
+  background-color: rgba(235, 219, 219, 0.8);}
+  
+
+.copyright p{
+  text-align: center;
+  padding-right: 20px;
+}
+
+/* Bootstrap */
+
+.bg-light {
+  background-color: #ffffff !important;
+}
+
+.navbar-custom {
+  background-color: #ffffff;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgba(37, 33, 33, 0.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color:  rgba(37, 33, 33, 0.8);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: rgba(187, 23, 23, 0.8);
+}
+
+.item .form-control-sm {
+  height: calc(1.5em + .5rem + 2px);
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+  width: 90%;
+}
+
+.item .form-control {
+  display: block;
+  width: 90%;
+}
+
+.item .btn-outline-info {
+  color: #17a2b8;
+  border-color: #17a2b8;
+  width: 90%;
+  margin-bottom: 10px;
+}
